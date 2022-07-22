@@ -1,8 +1,9 @@
 <?php
 	include 'db.php';
 	$url = $_GET['cut_link'];
+	var_export($_GET['cut_link']);
 	$bool = false;
-	if (isset($_GET['cut_link'])) {
+	if (strlen($_GET['cut_link'])!=null) {
 		$token = token();
 		$sql = "INSERT INTO links(link, token)VALUES('".$url."', '".$token."')";
 		if (isset($sql)) {
